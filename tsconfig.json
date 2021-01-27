@@ -4,8 +4,7 @@
   "compilerOptions": {
     "paths": {
       "@ctel/commons": [
-        "dist/ctel/commons/ctel-commons",
-        "dist/ctel/commons"
+        "./projects/ctel/commons/src"
       ]
     },
     "baseUrl": "./",
