@@ -7,6 +7,7 @@ import {App2SharedModule} from '../../projects/app2/src/app/app.module';
 import {App1SharedModule} from '../../projects/app1/src/app/app.module';
 import { NavComponent } from './nav/nav.component';
 import { ComponentsModule } from './components/components.module';
+import { CommonsModule } from '@ctel/commons';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     App1SharedModule.forRoot(),
     App2SharedModule.forRoot(),
-    ComponentsModule
+    ComponentsModule,
+    CommonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
