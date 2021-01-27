@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {App2SharedModule} from '../../projects/app2/src/app/app.module';
 import {App1SharedModule} from '../../projects/app1/src/app/app.module';
 import { NavComponent } from './nav/nav.component';
+import { ComponentsModule } from './components/components.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { NavComponent } from './nav/nav.component';
     BrowserModule,
     AppRoutingModule,
     App1SharedModule.forRoot(),
-    App2SharedModule.forRoot()
+    App2SharedModule.forRoot(),
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
