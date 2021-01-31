@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {App1SharedModule} from '../../projects/app1/src/app/app.module';
-import {App2SharedModule} from '../../projects/app2/src/app/app.module';
 
 const routes: Routes = [
   {path: 'app1',
-    loadChildren: '../../projects/app1/src/app/app.module#App1SharedModule'},
+    loadChildren: () => import('../../projects/app1/src/app/app.module').then(m => m.AppModule)},
   {path: 'app2',
-    loadChildren: '../../projects/app2/src/app/app.module#App2SharedModule'},
-  { path: '**', redirectTo: '/app1/one'}
+    loadChildren: () => import('../../projects/app2/src/app/app.module').then(m => m.AppModule)},
+  { path: '', redirectTo: 'app1', pathMatch: 'full'}
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    App1SharedModule.forRoot(),
-    App2SharedModule.forRoot()
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
