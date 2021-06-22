@@ -8,6 +8,8 @@ import { View2Component } from './view2/view2.component';
 import { NavComponent } from './nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { CommonsModule } from '@ctel/commons';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    //BrowserModule,
-    AppRoutingModule
+    BrowserModule,
+    AppRoutingModule,
+    ComponentsModule,
+    CommonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -371,6 +371,46 @@
           }
         }
       }
+    },
+    "@ctel/commons": {
+      "projectType": "library",
+      "root": "projects/ctel/commons",
+      "sourceRoot": "projects/ctel/commons/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ctel/commons/tsconfig.lib.json",
+            "project": "projects/ctel/commons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ctel/commons/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ctel/commons/src/test.ts",
+            "tsConfig": "projects/ctel/commons/tsconfig.spec.json",
+            "karmaConfig": "projects/ctel/commons/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ctel/commons/tsconfig.lib.json",
+              "projects/ctel/commons/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "my-app"
