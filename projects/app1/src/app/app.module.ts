@@ -1,11 +1,13 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import { View1Component } from './view1/view1.component';
 import { View2Component } from './view2/view2.component';
 import { NavComponent } from './nav/nav.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { CommonsModule } from '@ctel/commons';
 
@@ -17,6 +19,7 @@ import { CommonsModule } from '@ctel/commons';
     NavComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
@@ -26,14 +29,4 @@ import { CommonsModule } from '@ctel/commons';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-}
-
-@NgModule({})
-export class App1SharedModule {
-  static forRoot(): ModuleWithProviders<App1SharedModule> {
-    return {
-      ngModule: AppModule,
-      providers: []
-    };
-  }
 }
